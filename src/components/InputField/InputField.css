@@ -1,0 +1,42 @@
+.inputBox {
+    position: relative;
+}
+.inputBox input {
+    width: 100%;
+    border: 1px solid rgba(184, 180, 180, 0.885);
+    padding: 10px;
+    border-radius: 0.15em;
+    outline: none; 
+    font-size: 14px;
+    
+}
+.inputBox label{
+    position:absolute;
+    left: 0;
+    /* padding: 10px; */
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    color: rgba(139, 135, 135, 0.885);
+    transform: translateX(10px) translateY(-7px);
+    font-size: .65rem;
+    padding: 0 10px;
+    background: #ffff;
+}
+.inputBox input:focus{
+    border: 1px solid rgba(42, 45, 223, 0.885);
+    transition: 0.5s;
+}
+
+
+span{
+    color: red;
+    display: none; 
+    font-size: 12px;
+}
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+input:invalid[focused="true"] ~ span{
+    display: block;
+} 

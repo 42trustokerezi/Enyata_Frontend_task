@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "category": "Films",
+        "tile": "#A9FFE0",
+        "link": "/dashboard"
+    },
+    {
+        "id": "2",
+        "category": "Starships",
+        "tile": "#A9C1FF",
+        "link": "/starships"
+    },
+    {
+        "id": "3",
+        "category": "People",
+        "tile": "#FFA9EC",
+        "link": "/people"
+    },
+    {
+        "id": "4",
+        "category": "Species",
+        "tile": "#FDFFA9",
+        "link": "/species"
+    }
+]
