@@ -12,26 +12,28 @@ const Sidebar = ({ active }) => {
     <div className={`bg-[#031434] col-span-1 px-10 text-white`}>
       <img src={Logo} alt="starwars" className="w-[80%] mx-auto my-10" />
 
-      <Link to='/dashboard'>
+      <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "bg-[#0A74DC]" : "")}>
         <div
-          className={`cursor-pointer mb-3 text-center py-3 ${
-            active ? "bg-black" : "bg-slate-400"
-          }`}
+          className={`cursor-pointer mb-3 text-center py-3 bg-[#0A74DC]`}
         >
           <img src={""} alt="" />
           <p>Overview</p>
         </div>
-      </Link>
+      </NavLink>
 
-      {data.map((cat) => (
-        <div key={cat.id} className="py-3 px-3 my-3">
-          <Link to={cat.link}>
+      {data.map((cat, i) => (
+        <NavLink
+          key={i}
+          to={cat.link}
+          className={({ isActive }) => (isActive ? "bg-[#0A74DC]" : "")}
+        >
+          <div key={cat.id} className="py-3 px-3 my-3">
             <div className="flex w-full cursor-pointer">
               <Tiles tile={cat.tile} />
-              <p className="ml-7">{cat.category}</p>
+              <p className="ml-7 md:text-sm">{cat.category}</p>
             </div>
-          </Link>
-        </div>
+          </div>
+        </NavLink>
       ))}
     </div>
   );
