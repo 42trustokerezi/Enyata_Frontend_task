@@ -9,6 +9,7 @@ import Cover from "./pages/Cover";
 import DeathStar from "./pages/DeathStar";
 import Shank from "./pages/Shank";
 import Wookie from "./pages/Wookie";
+import Films from "./pages/Films";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/films" element={<Films/>}></Route>
           <Route path="/people" element={<People/>}></Route>
           <Route path="/starships" element={<Starships/>}></Route>
           <Route path="/species" element={<Species />}></Route>

@@ -6,26 +6,27 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = ({ active }) => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <div className={`bg-[#031434] col-span-1 px-10 text-white`}>
       <img src={Logo} alt="starwars" className="w-[80%] mx-auto my-10" />
 
-      <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "bg-[#0A74DC]" : "")}>
-        <div
-          className={`cursor-pointer mb-3 text-center py-3 bg-[#0A74DC]`}
+      <Link
+          to="/dashboard"
+          className={pathname === "/dashboard" ? "active" : "" }
         >
-          <img src={""} alt="" />
-          <p>Overview</p>
-        </div>
-      </NavLink>
+      <div className="w-full text-center py-3 px-3 mb-14">
+        
+          Overview
+      </div>
+      </Link>
 
       {data.map((cat, i) => (
-        <NavLink
+        <Link
           key={i}
           to={cat.link}
-          className={({ isActive }) => (isActive ? "bg-[#0A74DC]" : "")}
+          className={pathname === `${cat.link}` ? "active" : "" }
         >
           <div key={cat.id} className="py-3 px-3 my-3">
             <div className="flex w-full cursor-pointer">
@@ -33,7 +34,7 @@ const Sidebar = ({ active }) => {
               <p className="ml-7 md:text-sm">{cat.category}</p>
             </div>
           </div>
-        </NavLink>
+        </Link>
       ))}
     </div>
   );
