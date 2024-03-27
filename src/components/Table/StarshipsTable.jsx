@@ -1,6 +1,8 @@
 import React from "react";
+import Loader from "../Loader/Loader";
 
-const StarshipsTable = ({  data=null, }) => {
+const StarshipsTable = ({  data=null, isLoading }) => {
+  if (isLoading) return <div className="w-full"><Loader/></div>;
   
   return (
     <table className="w-full text-xs  border mb-10">

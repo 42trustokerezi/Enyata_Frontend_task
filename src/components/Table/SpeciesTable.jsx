@@ -1,6 +1,8 @@
 import React from "react";
+import Loader from "../Loader/Loader";
 
-const SpeciesTable = ({  data=null, }) => {
+const SpeciesTable = ({  data=null, isLoading }) => {
+  if (isLoading) return <div className="w-full"><Loader/></div>;
   
   return (
     <table className="w-full text-xs  border mb-10">

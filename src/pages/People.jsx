@@ -7,7 +7,7 @@ import { useGetPeopleQuery } from "../api/apiSlice";
 import PeopleTable from "../components/Table/PeopleTable";
 
 const People = () => {
-  const { data } = useGetPeopleQuery();
+  const { data, isLoading } = useGetPeopleQuery();
 
   return (
     <div className="grid grid-cols-5 h-[100%]">
@@ -17,12 +17,9 @@ const People = () => {
         {/* menu bar */}
         <Header />
         <div className="w-full px-10 mt-6">
-          <CategoryCard />
           <div className="mt-36">
             <h2 className="mb-6 font-semibold">People</h2>
-            <PeopleTable
-              data={data}
-            />
+            <PeopleTable data={data} isLoading={isLoading} />
           </div>
         </div>
       </div>

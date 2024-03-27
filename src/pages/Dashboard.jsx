@@ -7,7 +7,9 @@ import { useGetFilmsQuery } from "../api/apiSlice";
 import FilmTable from "../components/Table/FilmTable";
 
 const Dashboard = () => {
-  const { data } = useGetFilmsQuery();
+  const { data, isLoading } = useGetFilmsQuery();
+
+  // if (isLoading) return <div>Loading...</div>
 
   return (
     <div className="grid grid-cols-5 h-[100%]">
@@ -28,6 +30,7 @@ const Dashboard = () => {
               id="Episode ID"
               character="Character"
               data={data}
+              isLoading={isLoading}
             />
           </div>
         </div>

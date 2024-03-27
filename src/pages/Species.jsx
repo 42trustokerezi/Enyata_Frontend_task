@@ -8,7 +8,7 @@ import SpeciesTable from "../components/Table/SpeciesTable";
 
 const Species = () => {
  
-  const { data } = useGetSpeciesQuery();
+  const { data, isLoading } = useGetSpeciesQuery();
 
 
   return (
@@ -22,7 +22,7 @@ const Species = () => {
           
           <div className="mt-20">
           <h2 className="mb-6 font-semibold">Species</h2>
-                <SpeciesTable data={data} />
+                <SpeciesTable data={data} isLoading={isLoading} />
           </div>
         </div>
       </div>

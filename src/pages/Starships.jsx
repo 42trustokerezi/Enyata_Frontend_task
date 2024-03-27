@@ -8,7 +8,7 @@ import Table from "../components/Table/FilmTable";
 import StarshipsTable from "../components/Table/StarshipsTable";
 
 const Starships = () => {
-  const { data } = useGetStarshipsQuery();
+  const { data, isLoading } = useGetStarshipsQuery();
 
   return (
     <div className="grid grid-cols-5 h-[100%]">
@@ -26,6 +26,7 @@ const Starships = () => {
               ))} */}
             <StarshipsTable
               data={data}
+              isLoading={isLoading}
             />
           </div>
         </div>
